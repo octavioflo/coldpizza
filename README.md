@@ -13,7 +13,7 @@ Install the dependencies
 poetry install
 ```
 
-Run the application
+Run the application locally
 ```sh
-fastapi dev app.py
+fastapi dev app/main.py
 ```
