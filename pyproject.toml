@@ -6,9 +6,10 @@ authors = ["octavioflo <41705533+octavioflo@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
-strawberry-graphql = {extras = ["fastapi"], version = "^0.246.1"}
-fastapi = {extras = ["standard"], version = "^0.115.0"}
+python = "^3.10"
+sqlmodel = "^0.0.22"
+pydantic-settings = "^2.5.2"
+fastapi = {extras = ["standard"], version = "^0.115.2"}
 
 
 [build-system]

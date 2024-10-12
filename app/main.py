@@ -1,8 +1,15 @@
 from fastapi import FastAPI
-from strawberry.fastapi import GraphQLRouter
-from app.api.graphql import schema
 
-graphql_app = GraphQLRouter(schema)
+from app.database import create_db_and_tables
+from app.routers import vulnerabilities
+
 
 app = FastAPI()
-app.include_router(graphql_app, prefix="/graphql")
+
+
+@app.on_event("startup")
+def on_startup():
+    create_db_and_tables()
+
+
+app.include_router(vulnerabilities.router)
